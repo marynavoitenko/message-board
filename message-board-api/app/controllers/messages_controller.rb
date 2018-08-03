@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+    before_action :set_message, only: [:show, :update, :destroy]
+    
     def index
         render json: Message.all
     end
@@ -25,5 +27,9 @@ class MessagesController < ApplicationController
 
     def message_params
         params.require(:message).permit(:content, :sender_id, :recipient_id)
+    end
+
+    def set_message
+        @message = Message.find(params[:id])
     end
 end
