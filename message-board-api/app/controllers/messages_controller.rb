@@ -20,4 +20,10 @@ class MessagesController < ApplicationController
 
     def destroy
     end
+
+    private
+
+    def message_params
+        params.require(:message).permit(:content, :sender_id, :recipient_id)
+    end
 end
