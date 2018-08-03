@@ -27,6 +27,11 @@ class MessagesController < ApplicationController
     end
 
     def destroy
+        if @message.destroy
+            render json: { message: 'Successfully Deleted Message' }, status: 204
+        else
+            render json: { message: 'Unable to Delete'}, status: 422
+        end
     end
 
     private
