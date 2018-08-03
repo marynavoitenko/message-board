@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
     before_action :set_message, only: [:show, :update, :destroy]
-    
+
     def index
         render json: Message.all
     end
@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
     end
 
     def show
+        render json: @message
     end
 
     def update
