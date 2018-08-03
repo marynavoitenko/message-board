@@ -19,6 +19,11 @@ class MessagesController < ApplicationController
     end
 
     def update
+        if @message.update(message_params)
+            render json: @message
+        else
+            render json: { message: 'Message was not updated.' }, status: 422
+        end
     end
 
     def destroy
