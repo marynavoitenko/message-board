@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
+import { fetchMessages } from '../actions/messagesActions';
 
 class MessageBoardPage extends Component {
+    componentDidMount() {
+        console.log('inside componentDidMount');
+        
+    }  
+
     render() {
         const messages = this.props;
         return (
@@ -18,5 +24,11 @@ const mapStateToProps = (state) => {
         messages: state.messages
     };
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+      fetchMessages: () => dispatch(fetchMessages())
+    };
+  };
   
-export default connect(mapStateToProps)(MessageBoardPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageBoardPage);
