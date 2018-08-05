@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MessageBoardPage from './containers/MessageBoardPage';
+import MessageBoardPage from './MessageBoardPage';
 
 class App extends Component {
   render() {

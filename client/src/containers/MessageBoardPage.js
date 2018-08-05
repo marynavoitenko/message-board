@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
 
 class MessageBoardPage extends Component {
     render() {
+        const messages = this.props;
         return (
-            <div>Message Board Page</div>
+            <div>
+                <MessagesList messages={messages} />
+            </div>
         );
     }
 }
 
-export default MessageBoardPage;
+const mapStateToProps = (state) => {
+    return {
+        messages: state.messages
+    };
+}
+  
+export default connect(mapStateToProps)(MessageBoardPage);
