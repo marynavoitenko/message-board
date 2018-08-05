@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MessagesList from '../components/MessagesList';
 
 class MessageBoardPage extends Component {
     render() {
