@@ -7,14 +7,16 @@ class MessageBoardPage extends Component {
     componentDidMount() {
         console.log("inside component did mount");
         console.log(`${this.props.messages.length}`);
-        this.props.fetchMessages();
+        if (this.props.messages.length === 0) {
+            this.props.fetchMessages();
+        }
     }  
 
     render() {
-        const messages = this.props;
+        const messages = this.props.messages;
         return (
             <div>
-                {/* <MessagesList messages={messages} /> */}
+                <MessagesList messages={messages} />
             </div>
         );
     }
