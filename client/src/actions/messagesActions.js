@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 export function fetchMessages() {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
-        return fetch('http://localhost:3001/messages')
+        return fetch('/messages')
             .then(response => response.json())
             .then(responseJSON => {
                 console.log(responseJSON);
