@@ -5,7 +5,8 @@ import { fetchMessages } from '../actions/messagesActions';
 
 class MessageBoardPage extends Component {
     componentDidMount() {
-        console.log("inside component did mount")
+        console.log("inside component did mount");
+        console.log(`${this.props.messages.length}`);
         this.props.fetchMessages();
     }  
 
@@ -13,7 +14,6 @@ class MessageBoardPage extends Component {
         const messages = this.props;
         return (
             <div>
-
                 {/* <MessagesList messages={messages} /> */}
             </div>
         );
@@ -22,7 +22,7 @@ class MessageBoardPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        messages: state.messages
+        messages: state.messages.messages
     };
 }
 
