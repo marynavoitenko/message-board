@@ -25,7 +25,7 @@ export default (state = {
         }  
 
       case 'ADD_MESSAGE_SUCCESS':
-        return [ ...state, action.payload ];
+        return Object.assign({}, state, {message: state.messages.concat(action.payload) });
 
       default:
         return state;
