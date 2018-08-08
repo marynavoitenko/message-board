@@ -11,3 +11,17 @@ export function fetchMessages() {
             })
     };
 };
+
+export function addMessage(message) {
+    console.log(message);
+    return (dispatch) => {
+        dispatch({ type: 'ADDING_MESSAGE' });
+        return fetch('/messages', {
+            method: 'POST', 
+            body: JSON.stringify({ message: message })
+          }).then(response => response.json())
+            .then(message => {
+                dispatch({ type: 'ADD_MESSAGE_SUCCESS', payload: message });
+            })
+    };
+};

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
 import { fetchMessages } from '../actions/messagesActions';
+import MessagesNew from './MessagesNew'
 
 class MessageBoardPage extends Component {
     componentDidMount() {
@@ -17,6 +18,7 @@ class MessageBoardPage extends Component {
         return (
             <div>
                 <MessagesList messages={messages} />
+                <MessagesNew />
             </div>
         );
     }

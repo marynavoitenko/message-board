@@ -1,12 +1,10 @@
 export default (state = {
   isFetching: false,
+  isPosting: false,
   messages: []
 }, action) => {
     switch (action.type) {
-  
-      case 'ADD_MESSAGE':
-        return [ ...state, action.message ];
-      
+
       case 'LOADING_MESSAGES':
         return {
           ...state,
@@ -18,7 +16,17 @@ export default (state = {
           messages: action.payload,
           isFetching: false
         }
-  
+
+      case 'ADDING_MESSAGE':
+        return {
+          ...state,
+          isPosting: true
+        }  
+
+      case 'ADD_MESSAGE_SUCCESS':
+        return [ ...state, action.message ];
+    
+
       default:
         return state;
     }
