@@ -18,7 +18,9 @@ export function addMessage(message) {
         dispatch({ type: 'ADDING_MESSAGE' });
         return fetch('/messages', {
             method: 'POST', 
-            body: JSON.stringify({ message: message })
+            body: JSON.stringify({ message: message }),
+            headers:{ 'Accept': "application/json",
+               "Content-Type": "application/json"}
           }).then(response => response.json())
             .then(message => {
                 dispatch({ type: 'ADD_MESSAGE_SUCCESS', payload: message });
