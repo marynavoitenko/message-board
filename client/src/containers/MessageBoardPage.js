@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
 import { fetchMessages } from '../actions/messagesActions';
@@ -14,11 +15,14 @@ class MessageBoardPage extends Component {
     }  
 
     render() {
-        const messages = this.props.messages;
+        const { messages, match } = this.props;
         return (
             <div>
                 <MessagesList messages={messages} />
-                <MessagesNew />
+                <Switch>
+                    <Route path={`${match.url}/new`} component={MessagesNew} />
+                    
+                </Switch>
             </div>
         );
     }
