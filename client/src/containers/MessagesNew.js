@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMessage } from '../actions';
+import { addMessage } from '../actions/messagesActions';
 
 class MessagesNew extends Component {
 
@@ -14,22 +14,21 @@ class MessagesNew extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const addMessage = this.props;
-    addMessage(this.state);
+    this.props.addMessage(this.state);
   }
 
   handleOnChange = event => {
     this.setState({
-      title: event.target.value
+      content: event.target.value
     });
   }
 
   render(){
     return (
-      <form onSubmit={this.handleOnSubmit} >
+      <form onSubmit={this.handleOnSubmit.bind(this)} >
         <input 
           type="text" 
-          onChange={this.handleOnChange} 
+          onChange={this.handleOnChange.bind(this)} 
           placeholder="Add a Message" />
         <input type="submit" value="Add Message" />
       </form>
