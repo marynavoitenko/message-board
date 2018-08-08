@@ -8,7 +8,9 @@ class MessagesNew extends Component {
     super();
 
     this.state = {
-      content: ''
+      content: '', 
+      sender_name: '',
+      recipient_name: ''
     };
   }
 
@@ -19,7 +21,7 @@ class MessagesNew extends Component {
 
   handleOnChange = event => {
     this.setState({
-      content: event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
@@ -28,8 +30,19 @@ class MessagesNew extends Component {
       <form onSubmit={this.handleOnSubmit.bind(this)} >
         <input 
           type="text" 
+          name="sender_name"
           onChange={this.handleOnChange.bind(this)} 
-          placeholder="Add a Message" />
+          placeholder="Sender Name" />
+        <input 
+          type="text" 
+          name="recipient_name"
+          onChange={this.handleOnChange.bind(this)} 
+          placeholder="Recipient Name" />
+        <input 
+          type="text" 
+          name="content"
+          onChange={this.handleOnChange.bind(this)} 
+          placeholder="Message" />
         <input type="submit" value="Add Message" />
       </form>
     );
