@@ -3,26 +3,21 @@ import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
 import { fetchMessages } from '../actions/messagesActions';
-import MessagesNew from './MessagesNew'
+import MessagesNew from './MessagesNew';
 
 class MessageBoardPage extends Component {
     componentDidMount() {
-        console.log("inside component did mount");
-        console.log(`${this.props.messages.length}`);
-        if (this.props.messages.length === 0) {
-            this.props.fetchMessages();
-        }
+        this.props.fetchMessages();
     }  
 
     render() {
         const { messages, match } = this.props;
         return (
             <div>
-                <MessagesList messages={messages} />
                 <Switch>
                     <Route path={`${match.url}/new`} component={MessagesNew} />
-                    
                 </Switch>
+                <MessagesList messages={messages} />
             </div>
         );
     }
