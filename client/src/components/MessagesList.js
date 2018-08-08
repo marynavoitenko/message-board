@@ -1,14 +1,15 @@
 import React from 'react';
+import Message from './Message';
 
 const MessagesList = ({ messages }) => {
   const renderMessages = messages.map(message => 
-    <li key={message.id}>{message.content}</li>
+    <Message key={message.id} message={message} />
   );
-
+  
   return (
-    <ul>
+    <div>
       {renderMessages}
-    </ul>
+    </div>
   );
 };
 
