@@ -4,5 +4,5 @@ class Message < ApplicationRecord
 
     validates :content, presence: true
 
-    accepts_nested_attributes_for :sender, :recipient
+    accepts_nested_attributes_for :sender, :recipient, reject_if: proc { |attributes| attributes['name'].blank? }
 end
