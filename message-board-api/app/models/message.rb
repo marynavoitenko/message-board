@@ -3,4 +3,6 @@ class Message < ApplicationRecord
     belongs_to :recipient, :class_name => 'User', :foreign_key => 'recipient_id', required: false
 
     validates :content, presence: true
+
+    accepts_nested_attributes_for :sender, :recipient
 end
