@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router, 
   Route 
 } from 'react-router-dom';
-import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar';
+import Home from '../components/Home'
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={() => <div>Home</div>} />
+          <Route exact path="/" component={Home} />
           <Route path='/messages' component={MessageBoardPage}/>
         </div>
       </Router>
