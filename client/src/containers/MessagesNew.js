@@ -17,6 +17,7 @@ class MessagesNew extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addMessage(this.state);
+    this.props.history.push('/messages');
   }
 
   handleOnChange = event => {
