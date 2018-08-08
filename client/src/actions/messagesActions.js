@@ -14,11 +14,22 @@ export function fetchMessages() {
 
 export function addMessage(message) {
     console.log(message);
+    const newMessage = {
+        content: message.content,
+        sender_attributes: {
+            name: message.sender_name
+        },
+        recipient_attributes: {
+            name: message.recipient_name
+        }
+    };
+    console.log(newMessage);
+    
     return (dispatch) => {
         dispatch({ type: 'ADDING_MESSAGE' });
         return fetch('/messages', {
             method: 'POST', 
-            body: JSON.stringify({ message: message }),
+            body: JSON.stringify({ message: newMessage }),
             headers:{ 'Accept': "application/json",
                "Content-Type": "application/json"}
           }).then(response => response.json())
