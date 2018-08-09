@@ -5,7 +5,8 @@ import {
   Route 
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import Home from '../components/Home'
+import Home from '../components/Home';
+import '../App.css';
 
 class App extends Component {
   render() {
