@@ -1,9 +1,29 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.container .NavBar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 64px;
+}
+
 .NavBar {
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-    margin-bottom: 12px
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
 .NavLink {
-    margin-right: 10px
+    text-decoration: none;
+    color: #777;
+    margin: 20px;
 }
+
+.NavLink:hover {
+    color: #673ab7;
+    border-bottom-color: #673ab7;
+  }
