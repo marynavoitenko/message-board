@@ -6,13 +6,18 @@ const Message = ({ message }) => {
 
   return (
     <div className="message-card">
-        <br />
-        {sender ? <div>From: {message.sender.name}</div> : null }
+        { (sender || recipient) ?
+            <div className="message-card-header">
+              {sender ? <span className="sender">From: {message.sender.name}</span> : null }
 
-        {recipient ? <div>To: {message.recipient.name}</div> : null }
+              {recipient ? <span className="recipient">To: {message.recipient.name}</span> : null }
+            </div>
+            : null
+        }
 
-        {message.content}
-        <br />
+        <div className="message-card-main">
+          {message.content}
+        </div>
     </div>
   );
 };
