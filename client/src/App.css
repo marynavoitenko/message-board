@@ -104,12 +104,12 @@ body {
 }
 
 .message-card-header {
-    color: #D32F2F;
+    color: #8447C3;
     text-align: center;
     font-size: 12px;
     font-weight: 600;
-    border-bottom: 1px solid #EF9A9A;
-    background-color: #FFEBEE;
+    border-bottom: 1px solid #B28CD9;
+    /* background-color: #C1A3E1; */
     padding: 5px 10px;
     display: flex;
     flex-direction: row;
