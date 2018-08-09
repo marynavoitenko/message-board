@@ -7,9 +7,9 @@ const Message = ({ message }) => {
   return (
     <div className="message-card">
         <br />
-        {sender ? <p>From: {message.sender.name}</p> : null }
+        {sender ? <div>From: {message.sender.name}</div> : null }
 
-        {recipient ? <p>To: {message.recipient.name}</p> : null }
+        {recipient ? <div>To: {message.recipient.name}</div> : null }
 
         {message.content}
         <br />
