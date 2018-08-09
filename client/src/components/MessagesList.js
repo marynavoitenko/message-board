@@ -7,8 +7,10 @@ const MessagesList = ({ messages }) => {
   );
   
   return (
-    <div>
-      {renderMessages}
+    <div className="container">
+      <div className="message-list">
+        {renderMessages}
+      </div>
     </div>
   );
 };

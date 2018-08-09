@@ -1,16 +1,19 @@
 body {
-    font-family: Verdana, Arial, sans-serif;
+    background: #f5f7f8;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container .NavBar{
+/* --------- NAVBAR --------- */
+
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 0;
-    height: 64px;
 }
 
 .NavBar {
+    height: 20px;
+    width: 100%;
     font-size: 14px;
     border: 1px solid #ddd;
     padding: 10px 0;
@@ -23,7 +26,64 @@ body {
     margin: 20px;
 }
 
-.NavLink:hover {
+.NavLink:hover, .NavLink:active {
     color: #673ab7;
     border-bottom-color: #673ab7;
   }
+
+
+
+/* --------- MESSAGELIST --------- */
+
+/* .container .message-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.message-card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+  }
+
+  .message-card:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  } */
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.message-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+	box-sizing: border-box;
+}
+
+.message-card {
+	position: relative;
+	margin-bottom: 20px; 
+	padding-bottom: 30px; 
+	background: #fefff9;
+	color: #363636;
+	text-decoration: none;
+	box-shadow: 0 0 8px rgba(black, 0.19);
+	border-radius: 4px;
+}

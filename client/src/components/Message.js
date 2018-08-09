@@ -5,7 +5,7 @@ const Message = ({ message }) => {
   const recipient = message.recipient;
 
   return (
-    <div>
+    <div className="message-card">
         <br />
         {sender ? <p>From: {message.sender.name}</p> : null }
 

@@ -13,7 +13,7 @@ class MessageBoardPage extends Component {
     render() {
         const { messages, match } = this.props;
         return (
-            <div>
+            <div className="message-board-page">
                 <Switch>
                     <Route path={`${match.url}/new`} component={MessagesNew} />
                 </Switch>
