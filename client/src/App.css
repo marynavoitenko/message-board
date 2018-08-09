@@ -1,0 +1,9 @@
+.NavBar {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 12px
+}
+
+.NavLink {
+    margin-right: 10px
+}
