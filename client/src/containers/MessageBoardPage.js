@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MessagesList from '../components/MessagesList';
 import { fetchMessages } from '../actions/messagesActions';
 import MessagesNew from './MessagesNew';
+import MessageShow from './MessageShow';
 
 class MessageBoardPage extends Component {
     componentDidMount() {
@@ -16,6 +17,7 @@ class MessageBoardPage extends Component {
             <div className="message-board-page">
                 <Switch>
                     <Route exact path={`${match.url}/new`} component={MessagesNew} />
+                    <Route path={`${match.url}/:messageId`} component={MessageShow}/>
                 </Switch>
                 <MessagesList messages={messages} />
             </div>

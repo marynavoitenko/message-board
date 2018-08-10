@@ -97,3 +97,7 @@ body {
     padding: 15px 5px;
     margin: auto;
   }
+
+a {
+    text-decoration: none;
+}  
