@@ -1,11 +1,11 @@
 import React from 'react';
-import Message from './Message';
+import MessageCard from './MessageCard';
 import { Link } from 'react-router-dom';
 
 const MessagesList = ({ messages }) => {
   const renderMessages = messages.map(message => 
     <Link to={`/messages/${message.id}`} key={message.id}>
-      <Message message={message} />
+      <MessageCard message={message} />
     </Link>
   );
   

@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Message from '../components/Message'
+import MessageCard from '../components/MessageCard'
  
 const MessageShow = ({ message }) =>
   <div>
-    <Message message={message} />
+    <MessageCard message={message} />
   </div>
  
 const mapStateToProps = (state, ownProps) => {
