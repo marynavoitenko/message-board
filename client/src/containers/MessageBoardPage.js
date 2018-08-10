@@ -15,7 +15,7 @@ class MessageBoardPage extends Component {
         return (
             <div className="message-board-page">
                 <Switch>
-                    <Route path={`${match.url}/new`} component={MessagesNew} />
+                    <Route exact path={`${match.url}/new`} component={MessagesNew} />
                 </Switch>
                 <MessagesList messages={messages} />
             </div>
