@@ -5,8 +5,10 @@ import { deleteMessage } from '../actions/messagesActions';
  
 class MessageShow extends Component {
 
-  handleDelete = (messageId) => {
+  handleDelete = (messageId, event) => {
+    event.preventDefault();
     console.log('Deleting message: ' + messageId);
+    
     this.props.deleteMessage(messageId);
     this.props.history.push('/messages');
   }
@@ -22,7 +24,7 @@ class MessageShow extends Component {
   
  
 const mapStateToProps = (state, ownProps) => {
-  const message = state.messages.messages.find(message => message.id === parseInt(ownProps.match.params.messageId))
+  const message = state.messages.messages.find(message => message.id === parseInt(ownProps.match.params.messageId, 10))
  
   if (message) {
     return { message }
@@ -31,10 +33,5 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteMessage: () => dispatch(deleteMessage())
-  };
-};
  
-export default connect(mapStateToProps, mapDispatchToProps)(MessageShow);
+export default connect(mapStateToProps, { deleteMessage })(MessageShow);
