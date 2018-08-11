@@ -38,3 +38,17 @@ export function addMessage(message) {
             })
     };
 };
+
+export function deleteMessage(messageId) {
+    return (dispatch) => {
+        dispatch({ type: 'DELETING_MESSAGE' });
+        return fetch(`/messages/${messageId}`, {
+            method: 'DELETE'
+          }).then(response => {
+            // console.log(response);
+            if (response.ok) {
+                dispatch({ type: 'DELETE_MESSAGE_SUCCES', deletedMessageId: messageId })
+            }
+          })
+    };
+};
