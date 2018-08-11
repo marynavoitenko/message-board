@@ -38,7 +38,7 @@ body {
 
 
 .message-board-page, .single-message-page {
-    padding: 20px 15px 0;
+    padding: 20px 35px 0;
 }
 
 .message-list {
@@ -56,8 +56,8 @@ body {
 	position: relative;
 	margin: 5px; 
     padding: 10px 15px; 
-    width: 200px;
-    height: 150px;
+    width: 230px;
+    height: 170px;
     background: #EEF0FC;
 	color: #4a4a4a;
 	text-decoration: none;
@@ -93,6 +93,7 @@ body {
     margin: auto;
     overflow: hidden;
     text-align: center;
+    letter-spacing: 0.0625em;
   }
 
 a {
@@ -116,6 +117,7 @@ a {
 
 .message-card-fullpage > .message-card-main {
     margin: auto 40px;
+    /* letter-spacing: 0.0625em; */
 }
 
 /* disable hover for full page card */
