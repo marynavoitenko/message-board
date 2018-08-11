@@ -28,30 +28,32 @@ class MessagesNew extends Component {
 
   render(){
     return (
-      <div className="message-card message-fullpage">
-        <form onSubmit={this.handleOnSubmit.bind(this)} >
-          <input 
-            type="text" 
-            className="sender"
-            name="sender_name"
-            onChange={this.handleOnChange.bind(this)} 
-            placeholder="Sender Name" />
-          <input 
-            type="text"
-            className="recipient"
-            name="recipient_name"
-            onChange={this.handleOnChange.bind(this)} 
-            placeholder="Recipient Name" />
-          <input 
-            type="textarea"
-            rows={4}
-            cols={40}
-            className="content"
-            name="content"
-            onChange={this.handleOnChange.bind(this)} 
-            placeholder="Message" />
-          <input type="submit" value="Add Message" />
-        </form>
+      <div className="single-message-page">
+        <div className="message-card message-card-fullpage">
+          <form onSubmit={this.handleOnSubmit.bind(this)} className="new-message">
+            <input 
+              type="text" 
+              className="new-sender"
+              name="sender_name"
+              onChange={this.handleOnChange.bind(this)} 
+              placeholder="Sender Name" />
+            <input 
+              type="text"
+              className="new-recipient"
+              name="recipient_name"
+              onChange={this.handleOnChange.bind(this)} 
+              placeholder="Recipient Name" />
+            <input 
+              type="textarea"
+              rows={4}
+              cols={40}
+              className="new-content"
+              name="content"
+              onChange={this.handleOnChange.bind(this)} 
+              placeholder="Message" />
+            <input type="submit" value="Add Message" className="new-message-button"/>
+          </form>
+        </div>
       </div>
     );
   }

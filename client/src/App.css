@@ -38,11 +38,11 @@ body {
 
 
 
-/* --------- MESSAGELIST --------- */
+/* --------- MESSAGES LIST --------- */
 
 
-.message-board-page {
-    padding: 60px 15px 0;
+.message-board-page, .single-message-page {
+    padding: 20px 15px 0;
 }
 
 .message-list {
@@ -82,7 +82,6 @@ body {
     font-size: 12px;
     font-weight: 450;
     border-bottom: 1px solid #B28CD9;
-    /* background-color: #C1A3E1; */
     padding: 5px 10px;
     display: flex;
     flex-direction: row;
@@ -97,7 +96,6 @@ body {
     padding: 15px 5px 20px;
     margin: auto;
     overflow: hidden;
-    /* text-overflow: ellipsis; */
   }
 
 a {
@@ -105,19 +103,39 @@ a {
 }  
 
 
-/* --------- MESSAGESHOW --------- */
+/* --------- MESSAGE SHOW --------- */
 
-.message-fullpage {
-    width: auto;
+.single-message-page {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+.message-card-fullpage {
+    width: 550px;
     height: 350px;
     display: flex;
     flex-direction: column;
 }
 
-.sender, .recipient, .content {
+/* disable hover for full page card */
+.message-card-fullpage:hover {
+    top: 0px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* --------- NEW MESSAGE --------- */
+
+.new-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-sender, .new-recipient, .new-content, .new-message-button, .new-message-header {
     display: flex;              
     flex-direction: column; 
-    /* margin: auto; */
     padding: 8px 16px;
     border: none;
     letter-spacing: .09em;
@@ -127,7 +145,7 @@ a {
     margin: 10px auto;
 }
 
-.content {
+.new-content {
     height: 120px;
     word-wrap: break-word;
 }
@@ -136,9 +154,10 @@ input:focus {
     outline: none;
 }
 
-input[type="submit"] {
+.new-message-button {
     padding: 5px 15px;
-    margin: 5px;
-    min-width: 100px;
-    border-radius: 2px;
-  }
+    margin: auto;
+    width: 120px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
