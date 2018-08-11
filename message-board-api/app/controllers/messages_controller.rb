@@ -34,6 +34,10 @@ class MessagesController < ApplicationController
         end
     end
 
+    def most_recent
+        render json: Message.most_recent
+    end
+
     private
 
     def message_params
