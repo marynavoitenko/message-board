@@ -114,6 +114,10 @@ a {
     flex-direction: column;
 }
 
+.message-card-fullpage > .message-card-main {
+    margin: auto 40px;
+}
+
 /* disable hover for full page card */
 .message-card-fullpage:hover {
     top: 0px;
