@@ -179,7 +179,7 @@ input:focus {
     outline: none;
 }
 
-.new-message-button {
+.new-message-button, .delete-message-button {
     padding: 5px 15px;
     margin: 8px auto;
     width: 120px;
@@ -187,7 +187,7 @@ input:focus {
     cursor: pointer;
 }
 
-.new-message-button:hover {
+.new-message-button:hover, .delete-message-button:hover {
     top: -1px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
