@@ -1,16 +1,12 @@
 import React from 'react';
+import homepageImg from '../assets/images/homepage-light.jpg';
 
 const Home = () => {
 
   return (
-    <div className="single-message-page">
-      <div className="message-card message-card-fullpage">
-        <p>Message Board</p>
-        <ul>
-            <li>Sweet</li>
-            <li>Fun</li>
-            <li>Inspirational</li>
-        </ul>
+    <div className="homepage">
+      <div className="image-container">
+        <img src={homepageImg} alt="homepage"/>
       </div>
     </div>
   );
