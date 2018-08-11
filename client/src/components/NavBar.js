@@ -16,14 +16,14 @@ const NavBar = props => {
         to="/messages"
         exact
       >
-        Messages
+        Message Board
       </NavLink>
       <NavLink 
         className="NavLink"
         to="/messages/new"
         exact
       >
-        Add Message
+        New Message
       </NavLink>
     </div>
   );
