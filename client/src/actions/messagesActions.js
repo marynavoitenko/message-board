@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 export function fetchMessages() {
     return (dispatch) => {
         dispatch({ type: 'LOADING_MESSAGES' });
-        return fetch('/messages')
+        return fetch('/messages/most_recent')
             .then(response => response.json())
             .then(responseJSON => {
                 console.log(responseJSON);
