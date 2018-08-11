@@ -17,8 +17,11 @@ const Message = ({ message }) => {
             }
 
             <div className="message-card-main">
-            {message.content}
+                {message.content}
             </div>
+            <button  className="delete-message-button">
+                Delete
+            </button>
         </div>
     </div>
   );
