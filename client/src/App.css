@@ -5,6 +5,7 @@ body {
     font-weight: 400;
     letter-spacing: 0;
     background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #4a4a4a;
 }
 
 /* --------- NAVBAR --------- */
@@ -32,6 +33,26 @@ body {
     border-bottom-color: #673ab7;
   }
 
+
+/* --------- HOMEPAGE --------- */
+
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    min-width: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 900px;
+}
 
 
 /* --------- MESSAGES LIST --------- */
@@ -160,7 +181,7 @@ input:focus {
 
 .new-message-button {
     padding: 5px 15px;
-    margin: auto;
+    margin: 8px auto;
     width: 120px;
     border: 1px solid #ddd;
     cursor: pointer;
@@ -170,3 +191,4 @@ input:focus {
     top: -1px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
+
