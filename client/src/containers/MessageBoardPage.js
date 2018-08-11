@@ -9,7 +9,7 @@ import MessageShow from './MessageShow';
 class MessageBoardPage extends Component {
     componentDidMount() {
         this.props.fetchMessages();
-    }  
+    }
 
     render() {
         const { messages, match } = this.props;

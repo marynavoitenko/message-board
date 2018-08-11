@@ -103,3 +103,13 @@ body {
 a {
     text-decoration: none;
 }  
+
+
+/* --------- MESSAGESHOW --------- */
+
+.message-fullpage {
+    width: auto;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
