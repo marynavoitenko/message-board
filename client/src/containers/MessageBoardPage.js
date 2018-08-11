@@ -18,8 +18,8 @@ class MessageBoardPage extends Component {
                 <Switch>
                     <Route exact path={`${match.url}/new`} component={MessagesNew} />
                     <Route path={`${match.url}/:messageId`} component={MessageShow}/>
+                    <Route exact path={match.url} render={() => <MessagesList messages={messages} />} /> 
                 </Switch>
-                <MessagesList messages={messages} />
             </div>
         );
     }
