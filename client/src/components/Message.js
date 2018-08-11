@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MessageCard = ({ message }) => {
+const Message = ({ message }) => {
   const sender = message.sender;
   const recipient = message.recipient;
 
@@ -22,4 +22,4 @@ const MessageCard = ({ message }) => {
   );
 };
 
-export default MessageCard;
+export default Message;

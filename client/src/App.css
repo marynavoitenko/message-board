@@ -92,10 +92,12 @@ body {
 .message-card-main {
     display: flex;              
     flex-direction: column; 
-    justify-content: center;
+    justify-content: top;
     align-items: center; 
-    padding: 15px 5px;
+    padding: 15px 5px 20px;
     margin: auto;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
   }
 
 a {
