@@ -6,14 +6,14 @@ export function fetchMessages() {
         return fetch('/messages/most_recent')
             .then(response => response.json())
             .then(responseJSON => {
-                console.log(responseJSON);
+                console.log("Fetched messages: ", responseJSON);
                 dispatch({ type: 'FETCH_MESSAGES', payload: responseJSON });
             })
     };
 };
 
 export function addMessage(message) {
-    console.log(message);
+    console.log("Message to be added: ", message);
     const newMessage = {
         content: message.content,
         sender_attributes: {
@@ -23,7 +23,7 @@ export function addMessage(message) {
             name: message.recipient_name
         }
     };
-    console.log(newMessage);
+    console.log("Formatted message: ", newMessage);
     
     return (dispatch) => {
         dispatch({ type: 'ADDING_MESSAGE' });
@@ -46,7 +46,6 @@ export function deleteMessage(messageId) {
             return fetch(`/messages/${messageId}`, {
                 method: 'DELETE'
             }).then(response => {
-                // console.log(response);
                 if (response.ok) {
                     dispatch({ type: 'DELETE_MESSAGE_SUCCES', deletedMessageId: messageId })
                 }
