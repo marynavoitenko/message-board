@@ -40,7 +40,10 @@ export default (state = {
       
       case 'DELETE_MESSAGE_SUCCES':
         const messages = state.messages.filter(message => message.id !== parseInt(action.deletedMessageId, 10));
-        return { messages };
+        return { 
+          messages, 
+          isDeleting: false
+        };
 
       default:
         return state;
