@@ -8,19 +8,26 @@ import MessageShow from './MessageShow';
 
 class MessageBoardPage extends Component {
     componentDidMount() {
-        console.log("componentDidMount: ", this.props.messages);
         this.props.fetchMessages();
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.isPosting !== this.props.isPosting) {
+          this.props.fetchMessages();
+        }
+      }
+
+    
+
     render() {
         const { messages, match } = this.props;
-        console.log("render: ", messages);
+
         return (
             <div className="message-board-page">
                 <Switch>
                     <Route exact path={`${match.url}/new`} component={MessagesNew} />
                     <Route path={`${match.url}/:messageId`} component={MessageShow}/>
-                    <Route exact path={match.url} render={() => <MessagesList messages={messages} />} /> 
+                    <Route exact path={match.url} render={() => <MessagesList messages={messages} />} />
                 </Switch>
             </div>
         );
@@ -29,7 +36,8 @@ class MessageBoardPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        messages: state.messages.messages
+        messages: state.messages.messages,
+        isPosting: state.messages.isPosting
     };
 }
 
