@@ -8,11 +8,13 @@ import MessageShow from './MessageShow';
 
 class MessageBoardPage extends Component {
     componentDidMount() {
+        console.log("componentDidMount: ", this.props.messages);
         this.props.fetchMessages();
     }
 
     render() {
         const { messages, match } = this.props;
+        console.log("render: ", messages);
         return (
             <div className="message-board-page">
                 <Switch>
