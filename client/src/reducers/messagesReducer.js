@@ -33,7 +33,6 @@ export default (state = {
         }
 
       case 'DELETING_MESSAGE':
-        console.log(state.isDeleting);
         return {
           ...state,
           isDeleting: true

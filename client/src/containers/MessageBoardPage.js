@@ -12,11 +12,15 @@ class MessageBoardPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.isPosting !== this.props.isPosting) {
-          this.props.fetchMessages();
+        // if (nextProps.isPosting !== this.props.isPosting) {
+        //     this.props.fetchMessages();
+        // }
+
+        // re-fetch only after adding new message
+        if (this.props.isPosting === true && nextProps.isPosting === false) {
+            this.props.fetchMessages();
         }
       }
-
     
 
     render() {
