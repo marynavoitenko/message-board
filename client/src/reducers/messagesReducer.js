@@ -28,7 +28,8 @@ export default (state = {
       case 'ADD_MESSAGE_SUCCESS':
         return {
           ...state,
-          message: state.messages.concat(action.payload)
+          message: state.messages.concat(action.payload), 
+          isPosting: false
         }
 
       case 'DELETING_MESSAGE':
