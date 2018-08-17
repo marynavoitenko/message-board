@@ -27,8 +27,7 @@ export default (state = {
 
       case 'ADD_MESSAGE_SUCCESS':
         return {
-          ...state,
-          message: state.messages.concat(action.payload), 
+          messages: state.messages.concat(action.payload), 
           isPosting: false
         }
 
