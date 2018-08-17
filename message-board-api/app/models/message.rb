@@ -4,9 +4,17 @@ class Message < ApplicationRecord
 
     validates :content, presence: true
 
-    accepts_nested_attributes_for :sender, :recipient, reject_if: proc { |attributes| attributes['name'].blank? }
-
     def self.most_recent
         Message.order('created_at DESC')
+    end
+
+    def sender_attributes=(sender_attributes)
+        sender = User.find_or_create_by(sender_attributes) 
+        self.sender = sender
+    end
+
+    def recipient_attributes=(recipient_attributes)
+        recipient = User.find_or_create_by(recipient_attributes) 
+        self.recipient = recipient
     end
 end
