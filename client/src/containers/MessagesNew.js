@@ -26,7 +26,9 @@ class MessagesNew extends Component {
     });
   }
 
+
   render(){
+    
     return (
       <div className="single-message-page">
         <div className="message-card message-card-fullpage">
@@ -51,7 +53,13 @@ class MessagesNew extends Component {
               name="content"
               onChange={this.handleOnChange.bind(this)} 
               placeholder="Message" />
-            <input type="submit" value="Add Message" className="new-message-button"/>
+            <input 
+              type="submit" 
+              value="Add Message" 
+              className="new-message-button"
+              onChange={this.handleOnChange.bind(this)} 
+              disabled={!this.state.content}
+            />
           </form>
         </div>
       </div>
