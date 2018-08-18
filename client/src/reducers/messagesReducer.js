@@ -2,8 +2,7 @@ export default (state = {
   isFetching: false,
   isPosting: false,
   isDeleting: false,
-  messages: [],
-  message: {}
+  messages: []
 }, action) => {
     switch (action.type) {
 
