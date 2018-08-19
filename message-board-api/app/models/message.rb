@@ -5,7 +5,9 @@ class Message < ApplicationRecord
     validates :content, presence: true
 
     def self.most_recent
-        Message.order('created_at DESC')
+        # Message.order('created_at DESC')
+        # Fix N + 1
+        Message.includes(:sender, :recipient).order('created_at DESC')
     end
 
     def sender_attributes=(sender_attributes)
