@@ -2,7 +2,6 @@ import React from 'react';
 
 const MessageCard = ({ message }) => {
   const { sender, recipient } = message;
-  // const recipient = message.recipient;
 
   const longMessage = message.content.length > 140;
 
