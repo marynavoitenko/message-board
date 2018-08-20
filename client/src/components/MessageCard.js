@@ -1,23 +1,23 @@
 import React from 'react';
 
 const MessageCard = ({ message }) => {
-  const { sender, recipient } = message;
+  const { sender, recipient, content } = message;
 
-  const longMessage = message.content.length > 140;
+  const longMessage = content.length > 140;
 
   return (
     <div className="message-card">
         { (sender || recipient) ?
             <div className="message-card-header">
-              {sender ? <span className="sender">From: {message.sender.name}</span> : null }
+              {sender ? <span className="sender">From: {sender.name}</span> : null }
 
-              {recipient ? <span className="recipient">To: {message.recipient.name}</span> : null }
+              {recipient ? <span className="recipient">To: {recipient.name}</span> : null }
             </div>
             : null
         }
 
         <div className="message-card-main">
-          {longMessage ? `${message.content.slice(0, 140)}...` : message.content}
+          {longMessage ? `${content.slice(0, 140)}...` : content}
         </div>
     </div>
   );
