@@ -3,6 +3,10 @@
 ## About
 A web app where anyone can leave a message, anonymous or not, specifying recipient or not. A collection of fun, informative, or inspirational messages.
 
+## Demo
+
+[Video demo](https://youtu.be/sM-DV2bRgGY)
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
